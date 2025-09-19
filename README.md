@@ -1,0 +1,6 @@
+En nuestro avence de proyecto, nuestras herraminetas y los conceptos en nuestro codigo no lo hace que funcione, si no que los hace mas limpio , yorganizado y sobretodo entendible. 
+La eliminacion de cursos: nos permite mantener la actualizacion de la informacion de los cursos eliminados o agregados , y si un curso ya no ogrece se puede eliminar del sistema. Nos evita que los usauarios se inscriban por accidente en los cursos ya no disponible, es necesario poder eliminarlos del sistema, para que los usuarios no se escriban, por accidentes en un curso ya no existente. 
+Uso de listas: permite almacenar multiples elemntos como cursos, en una sola variable, son flexibles pueden agregar, eliminar buscar y modificar elementos facilmente dentro del sistema., 
+Funciones: evita repetir codigos, para evitar que se escribe una vez y usas variaves veces, encapsulamos en una funcion y la llams cuando la necesitas. esto reduce la cantidad de codigo y previene errores, 
+Moduralizacion: nos indica a la practica de dividir un programa en modulos o partes que contiene funciones, clases u otras estructuras de datos relacionado. 
+Organizacion del proyecto: ayuda a mantner un proyecto grande bien estructurado y ordenado, por ejemplo, puedes tener un modulo para base de datos, otro para la intefaz de usuario, y otra para calculos. 
