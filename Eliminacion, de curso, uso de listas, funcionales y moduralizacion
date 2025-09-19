@@ -1,0 +1,98 @@
+# Lista de los cursos y notas 
+Cursos = [
+{"curso": "Matematicas","nota": 90}
+{"curso":"Ciencias", "nota" 85}
+{"curso": "Historia", "nota" 80} 
+{"curso": "Programacion", "nota" 75}
+{"curso": "Fisica", "nota" 85}
+{"curso": "Quimica", "nota" 80}
+]
+from data import cursos 
+def listar_cursos():
+    """Lista todos los cursos y sus notas."""
+    if not cursos:
+        print("No hay cursos registrados.")
+        return
+    print("\nCursos registrados:")
+    for i, curso in enumerate(cursos, start=1):
+        print(f"{i}. {curso['nombre']} - Nota: {curso['nota']}")
+
+
+def agregar_curso(nombre, nota):
+"""Agregar un nuevo curso con su nota """
+curso.append ({"nombre": nombre, "nota": nota}) 
+print (f"curso '{nombre}' agrgado con exito,") 
+
+def listar_cursos():
+    """Lista todos los cursos y sus notas."""
+    if not cursos:
+        print("No hay cursos registrados.")
+        return
+    print("\nCursos registrados:")
+    for i, curso in enumerate(cursos, start=1):
+        print(f"{i}. {curso['nombre']} - Nota: {curso['nota']}")
+
+def eliminar_curso(nombre):
+    """Elimina un curso por su nombre."""
+    for curso in cursos:
+        if curso["nombre"].lower() == nombre.lower():
+            cursos.remove(curso)
+            print(f"Curso '{nombre}' eliminado con éxito.")
+            return
+    print(f"Curso '{nombre}' no encontrado.")
+
+def promedio_notas():
+    """Calcula y muestra el promedio de las notas."""
+    if not cursos:
+        print("No hay cursos para calcular el promedio.")
+        return
+    promedio = sum(curso["nota"] for curso in cursos) / len(cursos)
+    print(f"El promedio de las notas es: {promedio:.2f}")
+
+
+from gestor import agregar_curso, listar_cursos, eliminar_curso, promedio_notas
+
+def menu():
+    """Muestra el menú principal y gestiona las opciones."""
+    while True:
+        print("\n--- Gestor de Notas ---")
+        print("1. Agregar curso")
+        print("2. Listar cursos")
+        print("3. Eliminar curso")
+        print("4. Calcular promedio de notas")
+        print("5. Salir")
+        
+        opcion = input("Seleccione una opción: ")
+        
+        if opcion == "1":
+            nombre = input("Ingrese el nombre del curso: ")
+            try:
+                nota = float(input("Ingrese la nota del curso (0-100): "))
+                if 0 <= nota <= 100:
+                    agregar_curso(nombre, nota)
+                else:
+                    print("La nota debe estar entre 0 y 100.")
+            except ValueError:
+                print("Por favor, ingrese un valor numérico válido.")
+        
+        elif opcion == "2":
+            listar_cursos()
+        
+        elif opcion == "3":
+            nombre = input("Ingrese el nombre del curso a eliminar: ")
+            eliminar_curso(nombre)
+        
+        elif opcion == "4":
+            promedio_notas()
+        
+        elif opcion == "5":
+            print("Saliendo del programa. ¡Hasta luego!")
+            break
+        
+        else:
+            print("Opción no válida. Intente de nuevo.")
+
+if __name__ == "__main__":
+    menu()
+
+
